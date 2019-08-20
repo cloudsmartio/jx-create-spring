@@ -1,0 +1,73 @@
+Step: step-credential-initializer-2q8sk:
+
+{"level":"warn","ts":1566306457.498258,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1566306457.4989545,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-7jg57:
+
+{"level":"warn","ts":1566306459.1702456,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1566306459.1716526,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Step: step-place-tools:
+
+Step: step-git-source-meta-************-**-create-spr-rvs2s:
+
+{"level":"warn","ts":1566306471.1555884,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1566306471.5163248,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/************/**-create-spring.git @ 01d029dfede3b35dd0b0226fb7834ab4283cc52f in path /workspace/source"}
+Step: step-git-merge:
+
+{"level":"info","msg":"Using SHAs from PULL_REFS=master:01d029dfede3b35dd0b0226fb7834ab4283cc52f","time":"2019-08-20T13:07:51Z"}
+{"level":"warning","msg":"no SHAs to merge, falling back to initial cloned commit","time":"2019-08-20T13:07:51Z"}
+Step: step-merge-pull-refs:
+
+SKIP merge-pull-refs: Nothing to merge
+Step: step-create-effective-pipeline:
+
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-08-20T13:07:52Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with revision v1.0.23 to /builder/home/.**/jenkins-x-versions","time":"2019-08-20T13:07:52Z"}
+From https://github.com/jenkins-x/jenkins-x-versions
+ * tag               v1.0.23    -> FETCH_HEAD
+{"level":"info","msg":"Effective pipeline written to jenkins-x-effective.yml","time":"2019-08-20T13:07:54Z"}
+Step: step-create-tekton-crds:
+
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-08-20T13:07:54Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with revision v1.0.23 to /builder/home/.**/jenkins-x-versions","time":"2019-08-20T13:07:54Z"}
+From https://github.com/jenkins-x/jenkins-x-versions
+ * tag               v1.0.23    -> FETCH_HEAD
+{"level":"info","msg":"running command: echo \\$(**-release-version) \u003e VERSION","time":"2019-08-20T13:07:55Z"}
+{"level":"info","msg":"","time":"2019-08-20T13:07:56Z"}
+{"level":"info","msg":"running command: mvn versions:set -DnewVersion=\\$(cat VERSION)","time":"2019-08-20T13:07:56Z"}
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:**-create-spring >--------------------
+[INFO] Building demo 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:set (default-cli) @ **-create-spring ---
+[INFO] Searching for local aggregator root...
+[INFO] Local aggregation root: /workspace/source
+[INFO] Processing change of com.example:**-create-spring:0.0.1-SNAPSHOT -> 0.0.2
+[INFO] Processing com.example:**-create-spring
+[INFO]     Updating project com.example:**-create-spring
+[INFO]         from version 0.0.1-SNAPSHOT to 0.0.2
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.145 s
+[INFO] Finished at: 2019-08-20T13:08:21Z
+[INFO] ------------------------------------------------------------------------
+{"level":"info","msg":"","time":"2019-08-20T13:08:21Z"}
+{"level":"info","msg":"running command: ** step tag --version \\$(cat VERSION)","time":"2019-08-20T13:08:21Z"}
+{"level":"info","msg":"Updating chart version in charts/**-create-spring/Chart.yaml to 0.0.2","time":"2019-08-20T13:08:21Z"}
+{"level":"info","msg":"Updating repository in charts/**-create-spring/values.yaml to gcr.io/cloudsmart-ci/**-create-spring","time":"2019-08-20T13:08:21Z"}
+{"level":"info","msg":"Updating tag in charts/**-create-spring/values.yaml to 0.0.2","time":"2019-08-20T13:08:21Z"}
+{"level":"info","msg":"Tag v0.0.2 created and pushed to remote origin","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"PipelineActivity for ************-**-create-spring-master-2","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"Applying changes ","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"upserted PipelineResource ************-**-create-spring-m for the git repository https://github.com/************/**-create-spring.git and branch master","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"upserted Task ************-**-create-spring-m-xcngl-from-build-pack-2","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"upserted Pipeline ************-**-create-spring-m-xcngl-2","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"created PipelineRun ************-**-create-spring-m-xcngl-2","time":"2019-08-20T13:08:24Z"}
+{"level":"info","msg":"created PipelineStructure ************-**-create-spring-m-xcngl-2","time":"2019-08-20T13:08:24Z"}
